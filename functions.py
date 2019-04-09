@@ -11,8 +11,8 @@ def firstLevelF(a):
 	if a=='0' or a=='c' or a=='create':
 		createDb()
 		print("Database created succesfully")
-				
 		homeMenu()
+		
 	if a=='1' or a=='l' or a=='load':
 		print("Select the database you want to load")
 		databaseFulldirectory=input()

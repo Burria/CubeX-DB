@@ -1,5 +1,8 @@
+from interact import * 
+ 
+
 def loadedDB(d):
-	with open(d,'r')as db:
+	with open(d+'/headersconf.cxdb','r')as db:
 		
 		#here we are gonna store the db name
 		datal =''
@@ -14,6 +17,27 @@ def loadedDB(d):
 	if databaseNameMark in datal:
 		datal=datal.replace(databaseNameMark, "").strip()
 		print('Database: '+datal+' succesfully loaded')
+		
+			
+		def whatTodo():
+			print("(Q)uery de database, (C)reate"\
+			"/edit tables or (P)opulate de database? EXIT to quit")
+			todoNow=input()
+			todo=todoNow.lower()
+							
+			if todo=='q' or todo=='query':
+				queryDB()
+			if todo=='c' or todo=='create':
+				createTable()
+			if todo=='p' or todo=='populate':
+				populate()
+			if todo=='exit':
+				pass
+				#it should go to home menu
+			else:
+				whatTodo()
+		
+		whatTodo()
 	
 	else:
 		

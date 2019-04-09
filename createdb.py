@@ -24,17 +24,20 @@ def createDb():
 		functions.homeMenu()
 	
 	if nameIsSane:
-		pathToDB = directoryToInstall+'/'+nameofdatabase+'.cxdb'
-		if not os.path.exists(pathToDB) or os.path.getsize(pathToDB) < 1:
-			#CHECK IF YOU REALLY WANT To TRUNKATE AND WHAT THAT EVeN MEANS
-			#r should be enough
-			newcubexdb = open(pathToDB,'w+')
+		pathToDB = directoryToInstall+'/'+nameofdatabase
+				
+		if not os.path.exists(pathToDB):
+			os.mkdir(pathToDB)			
+			newcubexdb = open(pathToDB+'/headersconf.cxdb','w+')
 			newcubexdb.write(newDb(nameofdatabase))
 			newcubexdb.close()
 		else:
-			print("It seems the database already exist")
-		
+			print("It seems the database already exist"\
+			" or a folder with the name of the database")
+			import functions
+			functions.homeMenu()
+			
 def newDb(n):
-	return '#database_name: '+n
-
+	return '#database_name: '+n+'\n #columns:'
+	
 	
