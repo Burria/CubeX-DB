@@ -1,2 +1,2 @@
-# CubeX-DB
+# PRE ALPHA UNFINISHED CubeX-DB
 A 3D database
