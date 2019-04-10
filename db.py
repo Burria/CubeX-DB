@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 
 from functions import *
 
-#vars
+
 
 
 print("Welcome to CubeX DB")

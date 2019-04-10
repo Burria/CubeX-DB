@@ -21,14 +21,14 @@ def loadedDB(d):
 			
 		def whatTodo():
 			print("(Q)uery de database, (C)reate"\
-			"/edit tables or (P)opulate de database? EXIT to quit")
+			"/edit column or (P)opulate de database? EXIT to quit")
 			todoNow=input()
 			todo=todoNow.lower()
 							
 			if todo=='q' or todo=='query':
 				queryDB()
 			if todo=='c' or todo=='create':
-				createTable()
+				createCol(d)
 			if todo=='p' or todo=='populate':
 				populate()
 			if todo=='exit':

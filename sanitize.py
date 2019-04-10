@@ -1,9 +1,12 @@
 import re
-strictIlegal= ['/n','headersconf']
+strictIlegal= ['/n','headersconf','exit','#columns']
 
 def namingSani(s):
 	return re.match('^[A-Za-z0-9_-]+$', s)
 		
 def namingSaniT(t):	
-	pass
+	if t in strictIlegal:
+		return 0
+	else:
+		return re.match('^[A-Za-z0-9_-]+$', t)
 	

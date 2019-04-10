@@ -1,12 +1,16 @@
 from sanitize import *
 import os
+import fileinput
 
 def createDb():
 	
 	print('Lets create a new database')
 	print("In what directory we should"\
 	" install it? write EXIT to return")
+	
 	directoryToInstall=input()
+	#clear ' and empty spaces for drag and drop into terminal
+	directoryToInstall= directoryToInstall.replace("'", "").strip()
 	
 	if (directoryToInstall=='EXIT' or directoryToInstall=='Exit'	
 	or directoryToInstall=='exit'):
@@ -27,7 +31,8 @@ def createDb():
 		pathToDB = directoryToInstall+'/'+nameofdatabase
 				
 		if not os.path.exists(pathToDB):
-			os.mkdir(pathToDB)			
+			os.mkdir(pathToDB)
+			os.mkdir(pathToDB+'/cols')			
 			newcubexdb = open(pathToDB+'/headersconf.cxdb','w+')
 			newcubexdb.write(newDb(nameofdatabase))
 			newcubexdb.close()
@@ -38,6 +43,6 @@ def createDb():
 			functions.homeMenu()
 			
 def newDb(n):
-	return '#database_name: '+n+'\n #columns:'
+	return '#database_name: '+n+'\n#columns: \n#columns#'
 	
 	
