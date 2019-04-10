@@ -82,7 +82,7 @@ def querySelect(r,q):
 				idList.append(lineTag[0])
 				
 	
-	with open(r+'/cols/'+q[5]+'.cxdb','r') as cl:
+	with open(r+'/cols/'+q[2]+'.cxdb','r') as cl:
 		for line in cl:
 			line=line[1:]
 			lineTag=[]
