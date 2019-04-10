@@ -26,7 +26,7 @@ def loadedDB(d):
 			todo=todoNow.lower()
 							
 			if todo=='q' or todo=='query':
-				queryDB()
+				queryDB(d)
 			if todo=='c' or todo=='create':
 				createCol(d)
 			if todo=='p' or todo=='populate':

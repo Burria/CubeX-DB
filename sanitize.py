@@ -5,7 +5,7 @@ def namingSani(s):
 	return re.match('^[A-Za-z0-9_-]+$', s)
 		
 def namingSaniT(t):	
-	if t in strictIlegal:
+	if t.lower() in strictIlegal:
 		return 0
 	else:
 		return re.match('^[A-Za-z0-9_-]+$', t)
