@@ -71,17 +71,22 @@ def toSelect(q,l):
 			print("Sorry couldn't be found")
 			return
 		
-		resultOfQuery=[]
+		
+		
 		#lets split destiny columns into a new list 
 		destinyCol=q[1].split(',')
 		
-		
-		
-		
-		
-		
+		#xd array
+		resultOfQuery=[]
 		for col in destinyCol:
-			
+			resultOfQuery.append([])
+		
+		
+		
+		
+		index=0;
+		for col in destinyCol:
+			index+=1
 			if q[5]=='dimension0':
 				directiryDestiny=l+'/'+q[1]+'.cxdb'
 			else:
@@ -96,7 +101,7 @@ def toSelect(q,l):
 					idSelect=line.split('#')
 					
 					if idSelect[0]==idFound:
-						resultOfQuery.append(idSelect[1])
+						resultOfQuery[index-1].append(idSelect[1])
 				
 		print (resultOfQuery)
 
