@@ -1,11 +1,12 @@
 from programFiles.select import toSelect
+from programiles.selectCol import toSelectCol
 import re
 
 #transforms query into list
 def toList(q,l):
 	#first lets store the columns
 	dOne=re.findall('\((.+?)\)',q)
-		
+	dTwo=re.findall('[(.+?)]',q)	
 	#d1 is for maching on 0dimension
 	
 	#maybe there is no columns, lets give it None
@@ -17,15 +18,24 @@ def toList(q,l):
 				q=q.replace('('+dOne[i]+')', '')
 		except:
 			dOne.append('')
-		
+			
+	try:
+		if dTwo[0]:
+			#lets eliminate [*] from string 
+			q=q.replace('['+dTwo[0]+']', '')
+		except:
+			dTwo.append('')
+	
 	
 	#split everything into a list
 	dsplited=q.split()
-	#push into the list the columns 
+	#push into the list the (*) and [*] 
 	for i in range (0,2):
 		dsplited.insert(i+1, dOne[i])
+	dsplited.insert(3, dTwo[0])
 		
-	#now 1 to 2 positions are columns
+	#now 1 to 2 positions are columns ()
+	#3 is what to compare []
 	
 	#first position will tell us what to do
 	#forced uppercase, this is not a language for aficionados

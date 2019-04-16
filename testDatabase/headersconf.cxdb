@@ -1,4 +1,7 @@
 #database_name: ertyu
+##columnsat0##
+#country#
+#language#
 ##columns##
 #price of bread#num#
 #population#
@@ -6,15 +9,4 @@
 #2016#
 #2017#
 #2018#
-#0dimension# 
-##country##
-#0#Spain#
-#1#United States#
-#2#Brazil#
-#3#Andorra#
-##language##
-#0#Spanish#
-#1#American#
-#2#Brazilian#
-#3#Catalan#
 
