@@ -9,9 +9,9 @@ def toSelect(q,l):
 
 	try: 
 		if q[8]=='at':
-			directoryToCompare=l+'/'+q[9]+'/'+q[1]+'.cxdb'
+			directoryToCompare=l+'/'+q[9]+'/'+q[2]+'.cxdb'
 	except:
-		directoryToCompare=l+'/'+q[1]+'.cxdb'
+		directoryToCompare=l+'/'+q[2]+'.cxdb'
 		
 	
 	
@@ -77,14 +77,15 @@ def toSelect(q,l):
 		
 		
 		
-		if q[5]=='dimension0':
-			directiryDestiny=l+'/'+q[2]+'.cxdb'
-		else:
-			directiryDestiny=l+'/'+q[5]+'/'+q[2]+'.cxdb'
 		
 		
 		
 		for col in destinyCol:
+			
+			if q[5]=='dimension0':
+				directiryDestiny=l+'/'+q[1]+'.cxdb'
+			else:
+				directiryDestiny=l+'/'+q[5]+'/'+col+'.cxdb'
 			
 			with open(directiryDestiny,'r')as db:
 				for line in db:
